@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Posts />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Posts from './components/Posts.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Posts,
   }
 }
+// var posts = new Vue({
+//   el: '#posts',
+//   data: {
+//        items: [
+//       {title: 'First post', shortDesc: 'This is a very short description, lorem ipse dixit', imgPath: 'https://cdn.pixabay.com/photo/2012/11/29/02/50/heart-67848_960_720.jpg'},
+//       {title: 'Second post', shortDesc: 'This is a very short description, lorem ipse dixit', imgPath: 'https://cdn.pixabay.com/photo/2012/11/29/02/50/heart-67848_960_720.jpg'},
+//       {title: 'Third post', shortDesc: 'This is a very short description, lorem ipse dixit', imgPath: 'https://cdn.pixabay.com/photo/2012/11/29/02/50/heart-67848_960_720.jpg'},    
+//     ]
+//   }
+// })
 </script>
 
 <style>

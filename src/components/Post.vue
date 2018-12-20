@@ -1,6 +1,6 @@
 <template>
   <div class="container" >
-      <div v-for="item in items" :key="item.title"  >
+      <div v-for="item in items" :key="item.id"  >
     <div class="card"  v-if="item.id == $route.params.id">
       <img :src="item.imgPath" class="img-responsive card-img-top" />
       <h2 class="card-title">{{ item.title }}</h2>

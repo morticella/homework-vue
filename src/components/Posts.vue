@@ -1,7 +1,7 @@
 <template>
 
   <div class="container" v-if="$route.params.id === undefined">
-    <div class="card" v-for="item in items" :key="item.title">
+    <div class="card" v-for="item in items" :key="item.id">
       <img :src="item.imgPath" class="img-responsive card-img-top" />
       <h2 class="card-title">{{ item.title }}</h2>
       <p class="card-text">{{ item.shortDesc }}</p>

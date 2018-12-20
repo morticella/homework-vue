@@ -1,9 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="$route.params.id === undefined">
     <div class="card" v-for="item in items" :key="item.title">
       <img :src="item.imgPath" class="img-responsive card-img-top" />
-      <h2 class="card-title">{{ item.title }} </h2>
+      <h2 class="card-title">{{ item.title }}  ao {{$route.params.id}}</h2>
       <p class="card-text">{{ item.shortDesc }}</p>
+      <button class="btn btn-primary" @click="singlePost(item.id)">Read More</button>
     </div>
   </div>
 </template>
@@ -12,7 +13,12 @@
 
 export default {
   name: 'Posts',
-  props:['items']
+  props:['items'],
+  methods:{
+    singlePost(id){
+      this.$router.push('/post/'+id);
+    }
+  }
 }
 
 
@@ -28,5 +34,10 @@ export default {
 }
 .card-text{
   padding:3%;
+}
+a .btn{
+  color:#fff!important;
+  width: 60%;
+  margin: 0 auto 3%;
 }
 </style>

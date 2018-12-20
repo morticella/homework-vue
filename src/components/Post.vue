@@ -14,7 +14,11 @@
 <script>
 export default {
   name: 'Post',
-  props:['items'],
+  computed: {
+    items() {
+      return this.$store.state.items;
+    }
+  },
   watch:{
       '$route'(to){
           this.$route.params.id = to.params.id   
@@ -33,7 +37,7 @@ export default {
   margin-bottom:50px;
 }
 .card-title{
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 .card-text{
   padding:3%;

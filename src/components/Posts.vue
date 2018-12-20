@@ -1,4 +1,5 @@
 <template>
+
   <div class="container" v-if="$route.params.id === undefined">
     <div class="card" v-for="item in items" :key="item.title">
       <img :src="item.imgPath" class="img-responsive card-img-top" />
@@ -10,27 +11,29 @@
 </template>
 
 <script>
-
 export default {
   name: 'Posts',
-  props:['items'],
+ // props:['items'],
+  
   methods:{
     singlePost(id){
       this.$router.push('/post/'+id);
     }
+  },
+  computed: {
+    items() {
+      return this.$store.state.items;
+    }
   }
 }
-
-
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .card {
   margin-bottom:50px;
 }
 .card-title{
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 .card-text{
   padding:3%;
